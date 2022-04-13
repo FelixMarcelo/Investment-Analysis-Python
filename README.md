@@ -17,7 +17,7 @@ To bring all this amounts to present value i'll use accumulated IPCA.
 
 LET'S GO FOR IT. 
 
-```
+``` ruby
 #### Import libraries #### 
 
 ## for data
@@ -46,7 +46,7 @@ import xgboost
 
 I downloaded IPCA historical series at IBGE's website: https://sidra.ibge.gov.br/tabela/1737
 
-```
+``` ruby
 # read data
 dtf = pd.read_excel("IPCA_acumulado_2013-2022.xlsx")
 dtf = dtf[3:114]
@@ -56,12 +56,12 @@ display(dtf)
 ```
 
 <p align="center">
-  <img src="https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display.png" />
+  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display.png />
 </p>
 
 Dates were written in portuguese, so i'll replace them into numbers and change their dtypes and set "Month" columns as index (for me it facilitates time series visualization)
 
-```
+``` ruby
 # change months names to numbers
 dtf["Month"] = dtf["Month"].str.replace("janeiro", "01")
 dtf["Month"] = dtf["Month"].str.replace("fevereiro", "02")
@@ -80,10 +80,10 @@ dtf
 ```
 
 <p align="center">
-  <img src="https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display2.png" />
+  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display2.png />
 </p>
 
-```
+``` ruby
 # devide IPCA_var per 100 to get percentage of variation
 dtf["IPCA_var"] = dtf["IPCA_var"]/100
 
@@ -96,7 +96,7 @@ dtf = dtf.set_index("Month")
 
 Firts i want to visualize IPCA variation since 2013. I like to use Plotly for visualizations becouse of it's interability.
 
-```
+``` ruby
 # Plot IPCA monthly variation (Manualy customized)
 fig = px.line(dtf, x = dtf.index, y = dtf["IPCA_var"], markers = True)
 fig['data'][0]['line']['color'] = 'RebeccaPurple'
@@ -174,13 +174,13 @@ fig.add_annotation(x = dtf[dtf["IPCA_var"] == dtf["IPCA_var"].max()].index[0],
 
 
 fig.show()
-```
+``` 
 
 <p align="center">
-  <img src="https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/IPCA_var_2013.png" />
+  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/IPCA_var_2013.png />
 </p>
 
-```
+``` ruby
 # duplicate dataset, filtering the first since 2013 and the second since 2016
 dtf_since2013 = dtf.copy()
 dtf = dtf[dtf.index >= datetime.datetime(2016,1,1)]
@@ -199,7 +199,7 @@ it can be calculated as follows:
     i = variation rate for each month
     n = number of periods
     
-```
+``` ruby
 # add factor column (2013)
 dtf_since2013["factor"] = dtf_since2013["IPCA_var"] + 1
 
@@ -215,7 +215,7 @@ print('Accumulated inflation', round((product_since2013)*100, 2), '% since 2013'
 Output: 
         Accumulated inflation 75.32 % since 2013
         
-```
+``` ruby
 # Calculate accumulated savings accounts rate since 2013
 print("Accumulated savings accounts rate of ",round(((1.0637*1.0716*1.0815*1.0830*1.0661*1.0462*1.0426*1.0211*1.0294) - 1)*100, 2), " % since 2013")
 
@@ -226,7 +226,7 @@ output:
         
 Now i'll repeat the process considering 2016 to 2022
 
-```
+``` ruby
 # add factor column since 2016
 dtf["factor"] = dtf["IPCA_var"] + 1
 
@@ -244,7 +244,7 @@ output:
         
 With rates calculated, to bring the investment to Present Value i just have to follow the equation:  (1+𝑅2013).400000  where "R2013" is the accumulated inflation since 2013
 
-```
+``` ruby
 # calculate Present Value of investment (R$ 400.000,00)
 inv_PV = (1 + product_since2013)*400000
 ```
@@ -255,7 +255,7 @@ To calculate IPCA mean by month since 2016:
 R2016 = accumulated inflation since 2016
 n = number of periods
 
-```
+``` ruby
 # calculte everage IPCA rate since 2016
 IPCA_mean = ((product + 1)**(1/len(dtf)))-1
 print(round(IPCA_mean*100, 4), "% ao mês")
@@ -265,7 +265,7 @@ Output:
         
 Let's create a accumulated rent column withs values in PV to visualize total rent evolution
 
-```
+``` ruby
 # create accumulated IPCA column
 ac_IPCA = []
 for i in list(range(0, len(dtf))):
@@ -317,7 +317,7 @@ dtf["amount"] = dtf["acc_rent"] + 500000
 
 All set to plot to see the amount with IPCA correction X savings account correction X proposal plus rents whith IPCA correction
 
-```
+``` ruby
 # Plot IPCA monthly variation (using templates)
 fig = px.line(dtf, x = dtf.index, y = "amount", markers = False, template = "plotly_dark")
 #fig['data'][0]['line']['color'] = 'salmon'
@@ -416,7 +416,7 @@ fig.show()
 ```
 
 <p align="center">
-  <img src="https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/Final_plot.png" />
+  <img src=images/Final_plot.png />
 </p>
 
 #### Chart explanation and conclusion
