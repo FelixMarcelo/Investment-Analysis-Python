@@ -212,8 +212,9 @@ for i in dtf_since2013["factor"]:
 product_since2013 = product_since2013 - 1    
 print('Accumulated inflation', round((product_since2013)*100, 2), '% since 2013')
 ```
-Output: 
-        Accumulated inflation 75.32 % since 2013
+output: 
+
+          Accumulated inflation 75.32 % since 2013
         
 ``` ruby
 # Calculate accumulated savings accounts rate since 2013
@@ -222,7 +223,8 @@ print("Accumulated savings accounts rate of ",round(((1.0637*1.0716*1.0815*1.083
 savings_acc_rate = (1.0637*1.0716*1.0815*1.0830*1.0661*1.0462*1.0426*1.0211*1.0294) - 1
 ```
 output:
-        Accumulated savings accounts rate of  63.19  % since 2013
+
+          Accumulated savings accounts rate of  63.19  % since 2013
         
 Now i'll repeat the process considering 2016 to 2022
 
@@ -240,7 +242,8 @@ product = product - 1
 print('Accumulated inflation', round((product)*100, 2), '%')
 ```
 output:
-        Accumulated inflation 40.57 %
+
+          Accumulated inflation 40.57 %
         
 With rates calculated, to bring the investment to Present Value i just have to follow the equation:  (1+𝑅2013).400000  where "R2013" is the accumulated inflation since 2013
 
@@ -260,8 +263,9 @@ n = number of periods
 IPCA_mean = ((product + 1)**(1/len(dtf)))-1
 print(round(IPCA_mean*100, 4), "% ao mês")
 ```
-Output:
-        R$  124807.46 reais brought to PV
+output:
+
+          R$  124807.46 reais brought to PV
         
 Let's create a accumulated rent column withs values in PV to visualize total rent evolution
 
