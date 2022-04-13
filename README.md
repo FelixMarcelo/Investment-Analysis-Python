@@ -192,12 +192,12 @@ it can be calculated as follows:
 
 
 
-                                                                 (1 + i1)(1 + i2)...(1 + in) - 1
+(1+𝑖1)(1+𝑖2)...(1+𝑖𝑛)−1
 
 
 
-    i = variation rate for each month
-    n = number of periods
+i = variation rate for each month
+n = number of periods
     
 ``` ruby
 # add factor column (2013)
@@ -245,15 +245,20 @@ output:
 
           Accumulated inflation 40.57 %
         
-With rates calculated, to bring the investment to Present Value i just have to follow the equation:  (1+𝑅2013).400000  where "R2013" is the accumulated inflation since 2013
+With rates calculated, to bring the investment to Present Value i just have to follow the equation:  
 
+(1+𝑅2013)𝑉 
+
+R2013: accumulated inflation since 2013
+V: initial amount
 ``` ruby
 # calculate Present Value of investment (R$ 400.000,00)
 inv_PV = (1 + product_since2013)*400000
 ```
 
 To calculate IPCA mean by month since 2016:
-                                                                 (1+𝑅2016)1/𝑛−1
+                                                                 
+(1+𝑅2016)1/𝑛−1
  
 R2016 = accumulated inflation since 2016
 n = number of periods
