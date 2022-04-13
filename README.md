@@ -435,6 +435,8 @@ Blue line: R$ 400.000,00 brought to present value whith IPCA (2013 - 2022). I us
 Red line: 400.000,00 brought to present value whith savings accounts proftability (2013 - 2022). Another category of investment to compare with.
     
 Green line: represents the purchase proposal (500.000,00) added by rents montly received since 2016 and correct by IPCA to Present Value. 
+
+Obs: The apartment value at 2016 already starts at R$ 500.000,00 assuming that it is it's Present Value at 2022 and it grew monthly with the receipt of rents.
     
 
 I used two options of low risk investment to compare with the apartment bought in 2013 because, in my opinion, it is also a low risk investiment. 
