@@ -13,7 +13,7 @@ here is all the information i know about the proposal:
 3. Since jan, 2016 the owner monthly received RS 1.400,00 for rent.
 4. The purchase proposal amount was R$ 500.000,00.
 
-To bring all this amounts to present value i'll use accumulated IPCA. 
+To bring all this amounts to present value i'll use accumulated IPCA and savings accounts proftability. 
 
 LET'S GO FOR IT. 
 
