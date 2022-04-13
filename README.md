@@ -1,4 +1,4 @@
-## Apartment Investment Analysis
+## Investment Analysis in Python
 
 To day i was asked to analyse a apartment purchase proposal. 
 
