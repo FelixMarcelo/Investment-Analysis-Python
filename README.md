@@ -56,7 +56,7 @@ display(dtf)
 ```
 
 <p align="center">
-  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display.png />
+  <img src=images/data_display.png?raw=true />
 </p>
 
 Dates were written in portuguese, so i'll replace them into numbers and change their dtypes and set "Month" columns as index (for me it facilitates time series visualization)
@@ -80,7 +80,7 @@ dtf
 ```
 
 <p align="center">
-  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/data_display2.png />
+  <img src=images/data_display2.png?raw=true />
 </p>
 
 ``` ruby
@@ -177,7 +177,7 @@ fig.show()
 ``` 
 
 <p align="center">
-  <img src=https://github.com/FelixMarcelo/Investment-Analysis-Python/tree/main/images/IPCA_var_2013.png />
+  <img src=images/IPCA_var_2013.png?raw=true />
 </p>
 
 ``` ruby
@@ -416,7 +416,7 @@ fig.show()
 ```
 
 <p align="center">
-  <img src=images/Final_plot.png />
+  <img src=images/Final_plot.png?raw=true />
 </p>
 
 #### Chart explanation and conclusion
